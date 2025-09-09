@@ -18,13 +18,13 @@ function generateDropdowns() {
   for (let i = 1; i <= 8; i++) {
     let val = document.getElementById("P" + i).value.trim();
     if (!val) {
-      alert("All players (P1–P8) must be filled!");
+      alert("KEPALA COCOT ISI SEMUA NAMA PLAYER LAH");
       return;
     }
     players.push(val);
   }
   if (new Set(players).size !== 8) {
-    alert("Player names must be unique!");
+    alert("ISI LAH NAMA PLAYER SHORTFORM PUN OK");
     return;
   }
 

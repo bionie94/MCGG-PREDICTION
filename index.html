@@ -3,27 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MCGG Rotation Scheduler</title>
+  <title>MCGG Rotation Scheduler by shadowslayer</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen flex items-center justify-center p-6">
-  <div class="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8 space-y-6">
-    <h1 class="text-3xl font-extrabold text-center text-indigo-600">MCGG Rotation Scheduler</h1>
+<body class="bg-gradient-to-br from-gray-950 via-gray-900 to-indigo-950 min-h-screen flex items-center justify-center p-6 text-gray-200">
+  <div class="w-full max-w-3xl bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl p-8 space-y-6 border border-indigo-500/30">
+    <h1 class="text-3xl font-extrabold text-center text-indigo-400 drop-shadow-md tracking-wide">MCGG Rotation Scheduler</h1>
 
     <!-- Player input -->
     <div id="playerInputs" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
-    <button id="btnGenerate" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg shadow w-full sm:w-auto">Generate Rounds</button>
+    <button id="btnGenerate" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-lg shadow-lg w-full sm:w-auto transition transform hover:scale-105">Generate Rounds</button>
 
     <!-- Dropdown Rounds -->
     <form id="roundsForm" class="hidden">
       <div id="rounds" class="space-y-8"></div>
-      <button type="button" id="btnSolve" class="mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow w-full sm:w-auto">Solve</button>
+      <button type="button" id="btnSolve" class="mt-6 bg-green-600 hover:bg-green-500 text-white px-6 py-2 rounded-lg shadow-lg w-full sm:w-auto transition transform hover:scale-105">Solve</button>
     </form>
 
     <!-- Output -->
-    <div id="output" class="mt-8 space-y-4 text-gray-800"></div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <div id="output" class="mt-8 space-y-4 text-gray-100"></d

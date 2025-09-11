@@ -18,13 +18,13 @@ function generateDropdowns() {
   for (let i = 1; i <= 8; i++) {
     let val = document.getElementById("P" + i).value.trim();
     if (!val) {
-      alert("KEPALA COCOT ISI SEMUA NAMA PLAYER LAH");
+      alert("All players (P1–P8) must be filled!");
       return;
     }
     players.push(val);
   }
   if (new Set(players).size !== 8) {
-    alert("ISI LAH NAMA PLAYER SHORTFORM PUN OK");
+    alert("Player names must be unique!");
     return;
   }
 
@@ -334,7 +334,11 @@ III-2 : ${E}
 III-4 : ${II1}
 III-5 : ${II2}
 III-6 : ${D}
-IV-1 : ${C}`;
+IV-1 : ${C}
+IV-2 : ${B}
+IV-4 : ${F}
+IV-5 : ${E}
+IV-6 : ${II1}`;
 
           manualDiv.innerHTML = `<p class="text-green-400 font-semibold">✅ Additional data entry completed</p>`;
         };
@@ -356,6 +360,11 @@ IV-1 : ${C}`;
     10: "III-2",
     11: "III-4",
     12: "III-5",
+    13: "III-6",
+    14: "IV-1",
+    15: "IV-2",
+    16: "IV-4",
+    17: "IV-5",
   };
 
   const p1 = players[0];
@@ -399,6 +408,36 @@ IV-1 : ${C}`;
         [5, 3],
         [4, 1],
       ],
+      [
+        [3, 8],
+        [6, 1],
+        [5, 2],
+        [4, 7],
+      ],
+      [
+        [3, 1],
+        [6, 5],
+        [7, 2],
+        [4, 8],
+      ],
+      [
+        [3, 6],
+        [5, 8],
+        [7, 1],
+        [4, 2],
+      ],
+      [
+        [3, 4],
+        [2, 6],
+        [7, 5],
+        [8, 1],
+      ],
+      [
+        [3, 1],
+        [6, 7],
+        [5, 4],
+        [2, 8],
+      ],
     ];
 
     return pattern.map((r) =>
@@ -413,7 +452,7 @@ IV-1 : ${C}`;
     sched = sched.concat(futureRounds);
 
     let txt = `Kemungkinan ${idx + 1}\n`;
-    for (let r = 3; r < 12; r++) {
+    for (let r = 3; r < sched.length; r++) {
       let matches = sched[r];
       let userMatch = matches.find((m) => m.includes(p1));
       let opponent = userMatch[0] === p1 ? userMatch[1] : userMatch[0];
